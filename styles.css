@@ -380,9 +380,12 @@ a { color: inherit; text-decoration: none; cursor: none; }
 }
 
 /* ── Hero ── */
-@media (max-width: 640px) {
-  .hero-content-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-  .hero-countdown { display: flex !important; flex-wrap: wrap; gap: 16px !important; padding: 14px 18px !important; }
+@media (max-width: 820px) {
+  /* 100svh = viewport height with browser chrome visible — fixes iOS Safari 100vh bug */
+  .hero { height: 100svh !important; min-height: 0 !important; }
+  .hero-content-pad { padding-bottom: 28px !important; padding-left: 20px !important; padding-right: 20px !important; }
+  .hero-content-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .hero-countdown { display: flex !important; flex-wrap: wrap; gap: 12px !important; padding: 12px 16px !important; }
 }
 
 /* ── Overview intro ── */

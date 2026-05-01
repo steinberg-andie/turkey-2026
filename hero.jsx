@@ -58,7 +58,7 @@ function Hero({ onTabChange }) {
       }} />
 
       {/* Title block */}
-      <div style={{
+      <div className="hero-content-pad" style={{
         position: 'absolute',
         inset: 0,
         display: 'flex',
