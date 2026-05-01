@@ -349,3 +349,141 @@ a { color: inherit; text-decoration: none; cursor: none; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ══════════════════════════════════════════════════════
+   MOBILE RESPONSIVE — comprehensive
+   ══════════════════════════════════════════════════════ */
+
+/* ── Nav: two-row layout ── */
+@media (max-width: 820px) {
+  .nav {
+    flex-wrap: wrap;
+    padding: 12px 20px 0;
+    gap: 0;
+    align-items: center;
+  }
+  .nav-tabs {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 0 2px;
+    gap: 0;
+    scrollbar-width: none;
+    margin: 0 -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .nav-tabs::-webkit-scrollbar { display: none; }
+  .nav-tab { padding: 8px 12px; white-space: nowrap; flex-shrink: 0; font-size: 10px; }
+  .nav-meta { font-size: 9px; }
+}
+
+/* ── Hero ── */
+@media (max-width: 640px) {
+  .hero-content-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .hero-countdown { display: none !important; }
+}
+
+/* ── Overview intro ── */
+@media (max-width: 820px) {
+  .ov-intro { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .ov-city-grid { grid-template-columns: 1fr 1fr !important; }
+  .ov-stats { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .ov-city-grid { grid-template-columns: 1fr !important; }
+  .ov-stats { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── Overview decisions ── */
+@media (max-width: 820px) {
+  .decision-row { grid-template-columns: auto 1fr !important; gap: 12px !important; }
+  .decision-row .decision-note { display: none; }
+}
+
+/* ── Itinerary timeline strip ── */
+@media (max-width: 820px) {
+  .timeline-strip { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap !important; }
+  .timeline-strip::-webkit-scrollbar { display: none; }
+  .timeline-cell { min-width: 72px !important; flex-shrink: 0; }
+}
+
+/* ── Itinerary day cards ── */
+@media (max-width: 820px) {
+  .day-card { grid-template-columns: 80px 1fr auto !important; gap: 16px !important; padding: 20px 16px !important; }
+  .day-card-photo { display: none !important; }
+  .day-card-city { display: none !important; }
+}
+
+/* ── Day detail overlay ── */
+@media (max-width: 820px) {
+  .day-detail-inner { margin: 0 !important; min-height: 100vh; }
+  .day-detail-body { grid-template-columns: 1fr !important; gap: 24px !important; padding: 28px 20px !important; }
+}
+
+/* ── Lodging ── */
+@media (max-width: 820px) {
+  .lodging-article { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .lodging-article .photo { order: 1 !important; aspect-ratio: 16/9 !important; }
+  .lodging-article .lodging-text { order: 2 !important; }
+}
+
+/* ── Expenses balances ── */
+@media (max-width: 820px) {
+  .balances-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .balances-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* ── Expenses stat cards ── */
+@media (max-width: 640px) {
+  .expense-stats { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── Expense transaction rows → card layout ── */
+@media (max-width: 820px) {
+  .expense-header-row { display: none !important; }
+  .expense-row { grid-template-columns: 1fr auto !important; gap: 8px !important; padding: 14px 16px !important; }
+  .expense-row-date { display: none !important; }
+  .expense-row-payer { display: none !important; }
+  .expense-row-split { display: none !important; }
+  .expense-row-amount { font-size: 15px !important; }
+}
+
+/* ── Add expense form ── */
+@media (max-width: 640px) {
+  .iax-row { grid-template-columns: 1fr !important; }
+}
+
+/* ── Flights → card layout ── */
+@media (max-width: 820px) {
+  .flight-header { display: none !important; }
+  .flight-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 16px !important;
+    border-bottom: 1px solid var(--rule) !important;
+  }
+  .flight-route { justify-content: flex-start !important; }
+}
+
+/* ── Spots map height ── */
+@media (max-width: 820px) {
+  .spots-map-el { height: 360px !important; }
+}
+
+/* ── Footer ── */
+@media (max-width: 820px) {
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Packing progress bar ── */
+@media (max-width: 640px) {
+  .packing-header { flex-wrap: wrap !important; gap: 12px !important; }
+}

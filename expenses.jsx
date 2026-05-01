@@ -75,7 +75,7 @@ function Expenses() {
         <div className="container">
           <SectionHeader num="V" title="The split tab" lead="Who paid for what. Who owes who. Updated as you go." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 48 }}>
+          <div className="expense-stats" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 48 }}>
             <Stat label="Spent so far" value={fmt(total, currency)} sub={`${items.length} transactions`} />
             <Stat label="Per person" value={fmt(total / window.TRIP.crew.length, currency)} sub="6 travelers, even split" />
             <Stat label="Currency" value={currency} sub={
@@ -88,7 +88,7 @@ function Expenses() {
           {/* Balances */}
           <div style={{ marginBottom: 56 }}>
             <div className="eyebrow" style={{ marginBottom: 16 }}>Running Balances</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
+            <div className="balances-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
               {window.TRIP.crew.map(p => {
                 const bal = balances[p.name] || 0;
                 const positive = bal > 0.01;
@@ -142,7 +142,7 @@ function Expenses() {
           </div>
 
           <div style={{ display: 'grid', gap: 1, background: 'var(--rule)', border: '1px solid var(--rule)' }}>
-            <div style={{
+            <div className="expense-header-row" style={{
               display: 'grid',
               gridTemplateColumns: '110px 1fr 130px 130px 1fr 60px',
               gap: 16,
@@ -323,7 +323,7 @@ function Stat({ label, value, sub }) {
 function ExpenseRow({ item, currency, onDelete }) {
   const display = toCurrency(item.amount, item.currency, currency);
   return (
-    <div style={{
+    <div className="expense-row" style={{
       display: 'grid',
       gridTemplateColumns: '110px 1fr 130px 130px 1fr 60px',
       gap: 16,
@@ -331,7 +331,7 @@ function ExpenseRow({ item, currency, onDelete }) {
       background: 'var(--cream)',
       alignItems: 'center',
     }}>
-      <div style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-mute)' }}>{item.date}</div>
+      <div className="expense-row-date" style={{ fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-mute)' }}>{item.date}</div>
       <div>
         <div className="display" style={{ fontSize: 17 }}>{item.desc}</div>
         <div style={{ fontSize: 12, color: 'var(--ink-mute)', marginTop: 2 }}>
@@ -340,9 +340,9 @@ function ExpenseRow({ item, currency, onDelete }) {
           {item.link && <a href={item.link} target="_blank" rel="noreferrer" style={{ marginLeft: 8, color: 'var(--terra)' }}>↗ link</a>}
         </div>
       </div>
-      <div style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 16 }}>{item.payer}</div>
-      <div style={{ fontFamily: 'var(--serif)', fontSize: 18 }}>{fmt(display, currency)}</div>
-      <div style={{ fontSize: 12, color: 'var(--ink-mute)' }}>{item.splitWith.join(' · ')}</div>
+      <div className="expense-row-payer" style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: 16 }}>{item.payer}</div>
+      <div className="expense-row-amount" style={{ fontFamily: 'var(--serif)', fontSize: 18 }}>{fmt(display, currency)}</div>
+      <div className="expense-row-split" style={{ fontSize: 12, color: 'var(--ink-mute)' }}>{item.splitWith.join(' · ')}</div>
       <button onClick={onDelete} style={{ color: 'var(--ink-mute)', fontSize: 18 }}>×</button>
     </div>
   );

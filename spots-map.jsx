@@ -118,7 +118,7 @@ function SpotsMap({ spots, activeName, onActivate }) {
       </div>
 
       <div style={{ position: 'relative', border: '1px solid var(--rule)', background: 'var(--paper-warm)' }}>
-        <div ref={elRef} style={{ height: 560, width: '100%' }} />
+        <div ref={elRef} className="spots-map-el" style={{ height: 560, width: '100%' }} />
         {/* Legend */}
         <div style={{
           position: 'absolute', bottom: 14, left: 14, zIndex: 400,

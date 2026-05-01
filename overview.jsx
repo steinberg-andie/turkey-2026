@@ -35,7 +35,7 @@ function Overview({ onNav }) {
       {/* Editorial intro */}
       <section className="section" style={{ paddingTop: 120 }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 80, alignItems: 'center' }}>
+          <div className="ov-intro" style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: 80, alignItems: 'center' }}>
             <div>
               <h2 className="display" style={{ fontSize: 'clamp(48px, 6vw, 92px)' }}>
                 A trip on <em>paper.</em>
@@ -46,7 +46,7 @@ function Overview({ onNav }) {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="ov-city-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               <CityCard photo={photos.bodrum1} city="Bodrum" sub="Aegean coast · 4 nights" notes="Beach clubs, gulet day, lunch at Macakizi" onClick={() => onNav('itinerary')} />
               <CityCard photo={photos.istanbul1} city="Istanbul" sub="Bosphorus · 5 nights" notes="Hagia Sophia, Bosphorus cruise, Mikla rooftop" onClick={() => onNav('itinerary')} />
             </div>
@@ -56,7 +56,7 @@ function Overview({ onNav }) {
 
       {/* Stats / metadata bar */}
       <section style={{ borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)', background: 'var(--paper-warm)' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0 }}>
+        <div className="container ov-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0 }}>
           {[
             { k: '9', l: 'Days' },
             { k: '6', l: 'Travelers' },
@@ -156,7 +156,7 @@ function Overview({ onNav }) {
                     {done ? '✓ Decided' : '○ Open'}
                   </span>
                   <div className="display" style={{ fontSize: 20, textDecoration: done ? 'line-through' : 'none', opacity: done ? 0.5 : 1, transition: 'all 200ms' }}>{d.q}</div>
-                  <div style={{ color: 'var(--ink-mute)', fontSize: 14 }}>{d.note}</div>
+                  <div className="decision-note" style={{ color: 'var(--ink-mute)', fontSize: 14 }}>{d.note}</div>
                 </div>
               );
             })}

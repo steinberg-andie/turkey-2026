@@ -144,7 +144,7 @@ function Footer() {
       background: 'var(--ink)',
       color: 'oklch(85% 0.02 70)',
     }}>
-      <div style={{ maxWidth: 1480, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48 }}>
+      <div className="footer-grid" style={{ maxWidth: 1480, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48 }}>
         <div>
           <div className="display" style={{ fontSize: 48, color: 'var(--cream)', display: 'flex', alignItems: 'center', gap: 14 }}>
             <span style={{ textTransform: 'uppercase', letterSpacing: '0.01em' }}>Turkey</span>

@@ -13,7 +13,7 @@ function Itinerary() {
           <SectionHeader num="II" title="The itinerary" lead="Ten days, two cities. Click any day for the hour-by-hour." />
 
           {/* Timeline strip */}
-          <div style={{
+          <div className="timeline-strip" style={{
             display: 'flex',
             gap: 0,
             marginBottom: 56,
@@ -22,7 +22,7 @@ function Itinerary() {
             overflow: 'hidden',
           }}>
             {days.map((d, i) => (
-              <div key={d.day} style={{
+              <div key={d.day} className="timeline-cell" style={{
                 flex: 1,
                 padding: '14px 8px',
                 borderLeft: i === 0 ? 'none' : '1px solid var(--rule)',
@@ -59,6 +59,7 @@ function DayCard({ day, index, onOpen }) {
       onClick={onOpen}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      className="day-card"
       style={{
         display: 'grid',
         gridTemplateColumns: '120px 200px 1fr 240px 80px',
@@ -75,11 +76,11 @@ function DayCard({ day, index, onOpen }) {
         <div className="eyebrow">{day.label}</div>
         <div style={{ fontFamily: 'var(--mono)', fontSize: 12, marginTop: 6, color: 'var(--ink-mute)' }}>{day.date}</div>
       </div>
-      <div className="display" style={{ fontSize: 26, fontStyle: 'italic', fontWeight: 300 }}>{day.city}</div>
+      <div className="display day-card-city" style={{ fontSize: 26, fontStyle: 'italic', fontWeight: 300 }}>{day.city}</div>
       <div className="display" style={{ fontSize: 22, lineHeight: 1.25, fontWeight: 300, fontVariationSettings: '"opsz" 80' }}>
         {day.headline}
       </div>
-      <div className="photo" style={{ aspectRatio: '16/9', width: '100%' }}>
+      <div className="photo day-card-photo" style={{ aspectRatio: '16/9', width: '100%' }}>
         <img src={day.photo} alt={day.city} />
       </div>
       <div style={{ textAlign: 'right', fontFamily: 'var(--serif)', fontSize: 22, fontStyle: 'italic', color: hover ? 'var(--terra)' : 'var(--ink-mute)', transition: 'color 240ms, transform 240ms', transform: hover ? 'translateX(8px)' : 'none' }}>
@@ -102,7 +103,7 @@ function DayDetail({ day, onClose, onLink }) {
     }}
     onClick={onClose}
     >
-      <div onClick={e => e.stopPropagation()} style={{
+      <div onClick={e => e.stopPropagation()} className="day-detail-inner" style={{
         maxWidth: 980,
         margin: '60px auto',
         background: 'var(--paper)',
@@ -139,7 +140,7 @@ function DayDetail({ day, onClose, onLink }) {
         </div>
 
         <div style={{ padding: 48 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 48 }}>
+          <div className="day-detail-body" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 48 }}>
             <div>
               <div className="eyebrow">Arc</div>
               <div className="display" style={{ fontSize: 32, fontStyle: 'italic', marginTop: 8 }}>{day.arc}</div>

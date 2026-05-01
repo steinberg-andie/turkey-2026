@@ -14,7 +14,7 @@ function Lodging() {
                 ? { label: '◇ Alternate', cls: 'terra' }
                 : { label: '○ Deciding', cls: 'terra' };
               return (
-                <article key={l.city + l.name} style={{
+                <article key={l.city + l.name} className="lodging-article" style={{
                   display: 'grid',
                   gridTemplateColumns: i % 2 === 0 ? '1.2fr 1fr' : '1fr 1.2fr',
                   gap: 48,
@@ -27,7 +27,7 @@ function Lodging() {
                   <div className="photo" style={{ aspectRatio: '4/3', order: i % 2 === 0 ? 1 : 2 }}>
                     <img src={l.photo} alt={l.city} />
                   </div>
-                  <div style={{ order: i % 2 === 0 ? 2 : 1 }}>
+                  <div className="lodging-text" style={{ order: i % 2 === 0 ? 2 : 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
                       <span className="eyebrow">{l.city} · {l.dates} · {l.nights} nights</span>
                       <span className={`tag ${statusMeta.cls}`}>{statusMeta.label}</span>

@@ -109,7 +109,7 @@ function Hero({ onTabChange }) {
             <span style={{ fontStyle: 'italic', fontWeight: 300 }}>2026</span>
           </h1>
 
-          <div style={{
+          <div className="hero-content-grid" style={{
             marginTop: 32,
             display: 'grid',
             gridTemplateColumns: '1fr auto',
@@ -172,7 +172,7 @@ function Countdown({ d, h, m, s }) {
     </div>
   );
   return (
-    <div style={{
+    <div className="hero-countdown" style={{
       display: 'flex',
       gap: 28,
       padding: '20px 28px',

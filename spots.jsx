@@ -135,7 +135,7 @@ function Flights() {
           <SectionHeader num="VII" title="The flights" lead="Five legs across nine days. Bookings live here." />
 
           <div style={{ background: 'var(--cream)', border: '1px solid var(--rule)' }}>
-            <div style={{
+            <div className="flight-header" style={{
               display: 'grid',
               gridTemplateColumns: '160px 1fr 1fr 120px 140px 100px',
               gap: 16,
@@ -147,7 +147,7 @@ function Flights() {
               <div>Leg</div><div>Route</div><div>Date · Time</div><div>Carrier</div><div>Booking</div><div>Who</div>
             </div>
             {window.FLIGHTS.map((f, i) => (
-              <div key={i} style={{
+              <div key={i} className="flight-row" style={{
                 display: 'grid',
                 gridTemplateColumns: '160px 1fr 1fr 120px 140px 100px',
                 gap: 16,
@@ -156,7 +156,7 @@ function Flights() {
                 alignItems: 'center',
               }}>
                 <div className="display" style={{ fontSize: 18, fontStyle: 'italic' }}>{f.leg}</div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                <div className="flight-route" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                   <div className="display" style={{ fontSize: 28 }}>{f.from}</div>
                   <div style={{ flex: 1, position: 'relative' }}>
                     <div style={{ height: 1, background: 'var(--rule)', position: 'relative' }}>
@@ -225,7 +225,7 @@ function Packing() {
         <div className="container">
           <SectionHeader num="VIII" title="Packing list" lead="Beach, balloon, mosque-ready. Tick as you pack." />
 
-          <div style={{ marginBottom: 32, padding: '20px 24px', background: 'var(--paper-warm)', border: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="packing-header" style={{ marginBottom: 32, padding: '20px 24px', background: 'var(--paper-warm)', border: '1px solid var(--rule)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div className="display" style={{ fontSize: 22, fontStyle: 'italic' }}>{checkedCount} / {totalItems} packed</div>
             <div style={{ flex: 1, margin: '0 32px', height: 4, background: 'var(--rule)', position: 'relative' }}>
               <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: `${(checkedCount / totalItems) * 100}%`, background: 'var(--terra)', transition: 'width 320ms' }} />
