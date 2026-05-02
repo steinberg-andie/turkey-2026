@@ -33,7 +33,7 @@ function Lodging() {
 function LodgingGroup({ city, options }) {
   return (
     <div style={{ borderTop: '1px solid var(--rule)', paddingTop: 48 }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 28 }} className="lodging-compare-grid">
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 28 }} className="lodging-compare-grid">
         {options.map(l => <LodgingCard key={l.name} lodging={l} />)}
       </div>
     </div>
